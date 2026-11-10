@@ -1,0 +1,29 @@
+# Entorno y secretos
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Dependencias y build
+node_modules/
+vendor/
+dist/
+build/
+.cache/
+
+# Docker / datos locales
+db_data/
+docker/data/
+
+# Logs
+*.log
+logs/

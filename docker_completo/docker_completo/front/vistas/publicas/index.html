@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXTERNOLAB · Catálogo</title>
+    <meta name="description" content="EXTERNOLAB: libros, revistas y audiolibros. Categorías, ofertas y catálogo.">
+    <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,560;0,9..144,700;1,9..144,560&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../assets/css/style.css?v=16">
+    <link rel="stylesheet" href="../../assets/css/mobile.css?v=12">
+    <link rel="stylesheet" href="../../assets/css/loader.css?v=16">
+    <link rel="stylesheet" href="../../assets/css/clave.css">
+</head>
+<body data-loader-manual="1" data-loader-texto="Abriendo EXTERNOLAB…">
+    <div class="progreso-scroll" id="progreso-scroll" aria-hidden="true"></div>
+    <div id="loader-pagina" class="loader-pagina" role="status" aria-live="polite" aria-busy="true">
+        <div class="loader-caja">
+            <p class="loader-marca">EXTERNOLAB</p>
+            <div class="loader-libro" aria-hidden="true">
+                <span class="loader-libro-lomo"></span>
+                <span class="loader-libro-pagina"></span>
+                <span class="loader-libro-pagina"></span>
+                <span class="loader-libro-pagina"></span>
+                <span class="loader-libro-tapa"></span>
+            </div>
+            <div class="loader-barra" aria-hidden="true"><span></span></div>
+            <p class="loader-texto mb-0">Abriendo EXTERNOLAB…</p>
+        </div>
+    </div>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light biblioteca-nav sticky-top">
+            <div class="container">
+                <a class="marca-nav" href="#inicio">EXTERNOLAB</a>
+                <div class="d-flex align-items-center gap-1 ms-auto order-lg-2">
+                    <button type="button" class="btn btn-carrito-nav" data-bs-toggle="offcanvas" data-bs-target="#panelCarrito" aria-label="Abrir carrito">
+                        <i class="bi bi-bag" aria-hidden="true"></i>
+                        <span class="badge-carrito" id="badge-carrito">0</span>
+                    </button>
+                    <button type="button" class="btn btn-gear" data-bs-toggle="offcanvas" data-bs-target="#panelAjustes" aria-label="Ajustes de EXTERNOLAB">
+                        <i class="bi bi-gear" aria-hidden="true"></i>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse order-lg-1" id="menuPrincipal">
+                    <ul class="navbar-nav ms-lg-auto align-items-lg-center gap-lg-1 py-2 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#categorias">Categorías</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#catalogo" id="ir-busqueda">Búsqueda <i class="bi bi-search" aria-hidden="true"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#mis-libros">Mis libros <span class="badge text-bg-dark" id="badge-mis-libros">0</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="#catalogo" id="ir-favoritos">Favoritos <span class="badge text-bg-dark" id="badge-favoritos">0</span></a></li>
+                        <li class="nav-item">
+                            <button type="button" class="nav-link btn btn-link d-inline-flex align-items-center gap-2" id="btn-login" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                <img class="nav-avatar d-none" id="nav-avatar" alt="" width="28" height="28">
+                                <span id="texto-btn-login">Login</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section class="hero" id="inicio">
+            <div class="container hero-masthead">
+                <p class="hero-fecha">Sala de lectura</p>
+                <h1 class="hero-titulo">Mientras más leas,<br>más cosas sabrás</h1>
+                <p class="hero-bajada">Un catálogo para llevar o escuchar: libros, revistas y audiolibros.</p>
+                <div class="hero-acciones">
+                    <a class="btn btn-oscuro" href="#catalogo">Explorar catálogo</a>
+                    <a class="btn btn-linea" href="#ofertas">Ver ofertas</a>
+                </div>
+            </div>
+            <img class="hero-imagen img-fluid" src="../../assets/fotos/mesa.jpg" width="1600" height="1067" alt="Estanterías curvas de una biblioteca, llenas de libros">
+        </section>
+
+        <section class="bloque" id="categorias">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <h2 class="etiqueta text-center mb-4">Categorías en tendencia</h2>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <a class="categoria-item" href="#catalogo" data-ir-categoria="drama">
+                                    <span class="categoria-icono" aria-hidden="true">
+                                        <svg viewBox="0 0 88 64"><ellipse cx="28" cy="32" rx="20" ry="24" fill="#d9ef8a"/><circle cx="21" cy="28" r="2.2" fill="#243024"/><circle cx="33" cy="28" r="2.2" fill="#243024"/><path d="M20 38 Q28 46 36 38" fill="none" stroke="#243024" stroke-width="2" stroke-linecap="round"/><ellipse cx="62" cy="32" rx="20" ry="24" fill="#1c1c1c"/><circle cx="55" cy="28" r="2.2" fill="#f6ebdf"/><circle cx="69" cy="28" r="2.2" fill="#f6ebdf"/><path d="M55 42 Q62 34 69 42" fill="none" stroke="#f6ebdf" stroke-width="2" stroke-linecap="round"/></svg>
+                                    </span>
+                                    Drama
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a class="categoria-item" href="#catalogo" data-ir-categoria="terror">
+                                    <span class="categoria-icono" aria-hidden="true">
+                                        <svg viewBox="0 0 64 64"><path fill="#1c1c1c" d="M32 6c-12 0-20 9-20 21 0 8 4 14 8 17v6c0 2 2 4 4 4h2v-6h8v6h2c2 0 4-2 4-4v-6c4-3 8-9 8-17C52 15 44 6 32 6z"/><circle cx="24" cy="28" r="5" fill="#f6ebdf"/><circle cx="40" cy="28" r="5" fill="#f6ebdf"/><path d="M29 36h6v4h-2v5h-2v-5h-2z" fill="#f6ebdf"/></svg>
+                                    </span>
+                                    Terror
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a class="categoria-item" href="#catalogo" data-ir-categoria="amor">
+                                    <span class="categoria-icono" aria-hidden="true">
+                                        <svg viewBox="0 0 64 64"><path fill="#ff7aa2" d="M32 54 14 36C6 28 8 16 18 16c6 0 9 4 14 10 5-6 8-10 14-10 10 0 12 12 4 20L32 54z"/></svg>
+                                    </span>
+                                    Amor
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a class="categoria-item" href="#catalogo" data-ir-categoria="aventura">
+                                    <span class="categoria-icono" aria-hidden="true">
+                                        <svg viewBox="0 0 64 64"><circle cx="46" cy="16" r="6" fill="#f2c14e"/><path fill="#2f9e57" d="M6 54 24 26l10 14 10-18 16 32H6z"/><path fill="#7dce7a" d="M18 54 32 34l14 20H18z"/></svg>
+                                    </span>
+                                    Aventura
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <p class="etiqueta text-center mb-2">Autor destacado del mes</p>
+                        <h2 class="autor-nombre text-center mb-4" id="nombre-autor">George R.R. Martin</h2>
+                        <div class="row g-3 portadas-autor" id="estante-autor"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bloque" id="aventuras">
+            <div class="container">
+                <h2 class="seccion-titulo">¿Qué aventura elegirás hoy?</h2>
+                <div class="row g-4 portadas-aventura" id="estante-aventura"></div>
+            </div>
+        </section>
+
+        <section class="bloque" id="ofertas">
+            <div class="container">
+                <h2 class="seccion-titulo">Ofertas de la semana</h2>
+                <p class="bajada">Libros, revistas y audiolibros con precio especial.</p>
+                <div class="row g-4" id="grilla-ofertas"></div>
+            </div>
+        </section>
+
+        <section class="bloque" id="catalogo">
+            <div class="container">
+                <h2 class="seccion-titulo">Catálogo</h2>
+                <p class="bajada">Libros, revistas y audiolibros. Tip: pulsá <kbd>/</kbd> para buscar.</p>
+
+                <div class="estadisticas-catalogo" id="estadisticas-catalogo" aria-live="polite">
+                    <div class="stat-pill"><strong id="stat-total">—</strong><span>Títulos</span></div>
+                    <div class="stat-pill"><strong id="stat-ofertas">—</strong><span>Ofertas</span></div>
+                    <div class="stat-pill"><strong id="stat-favs">—</strong><span>Favoritos</span></div>
+                    <div class="stat-pill"><strong id="stat-mios">—</strong><span>Mis libros</span></div>
+                </div>
+
+                <div class="barra-catalogo">
+                <form id="form-busqueda" class="row g-3 align-items-end" role="search" autocomplete="off" data-loader="off">
+                    <div class="col-lg-4">
+                        <label class="form-label small mb-1" for="buscador">Buscar <span class="atajo-busqueda d-none d-md-inline-flex" aria-hidden="true">/</span></label>
+                        <div class="input-group input-group-lg">
+                            <input class="form-control buscador" id="buscador" type="search" placeholder="Título, autor o categoría" enterkeyhint="search" list="sugerencias-busqueda">
+                            <datalist id="sugerencias-busqueda"></datalist>
+                            <button class="btn btn-outline-secondary" type="button" id="limpiar-busqueda" title="Limpiar búsqueda" aria-label="Limpiar búsqueda">
+                                <i class="bi bi-x-lg" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <label class="form-label small mb-1" for="filtro-categoria">Categoría</label>
+                        <select class="form-select" id="filtro-categoria">
+                            <option value="todas">Todas</option>
+                            <option value="drama">Drama</option>
+                            <option value="terror">Terror</option>
+                            <option value="amor">Amor</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="fantasia">Fantasía</option>
+                            <option value="ciencia">Ciencia</option>
+                            <option value="cultura">Cultura</option>
+                            <option value="clasicos">Clásicos</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-2">
+                        <label class="form-label small mb-1" for="orden-catalogo">Ordenar</label>
+                        <select class="form-select" id="orden-catalogo">
+                            <option value="titulo">A–Z</option>
+                            <option value="titulo-desc">Z–A</option>
+                            <option value="precio">Precio ↑</option>
+                            <option value="precio-desc">Precio ↓</option>
+                            <option value="anio-desc">Más nuevos</option>
+                            <option value="oferta">Ofertas primero</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <label class="form-label small mb-1" for="filtro-precio">Precio máx.</label>
+                        <div class="filtro-precio">
+                            <input class="form-range" id="filtro-precio" type="range" min="0" max="50000" step="500" value="50000">
+                            <div class="rango-precio-val" id="filtro-precio-val">Hasta $ 50.000</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-2">
+                        <label class="form-label small mb-1 d-block">Vista</label>
+                        <div class="herramientas-catalogo">
+                            <button type="button" class="btn-vista activo" id="vista-grilla" aria-pressed="true" title="Vista grilla" aria-label="Vista grilla"><i class="bi bi-grid-3x3-gap" aria-hidden="true"></i></button>
+                            <button type="button" class="btn-vista" id="vista-lista" aria-pressed="false" title="Vista lista" aria-label="Vista lista"><i class="bi bi-list-ul" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-sm btn-linea d-none" id="btn-limpiar-filtros">Quitar filtros</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label small mb-1 d-block">Tipo</label>
+                        <div class="filtros-scroll d-flex flex-wrap gap-2" id="filtros">
+                            <button type="button" class="btn filtro activo" data-filtro="todos" aria-pressed="true">Todos</button>
+                            <button type="button" class="btn filtro" data-filtro="libro" aria-pressed="false">Libros</button>
+                            <button type="button" class="btn filtro" data-filtro="revista" aria-pressed="false">Revistas</button>
+                            <button type="button" class="btn filtro" data-filtro="audiolibro" aria-pressed="false">Audiolibros</button>
+                            <button type="button" class="btn filtro" data-filtro="favoritos" aria-pressed="false">♥ Favoritos</button>
+                            <button type="button" class="btn filtro" data-filtro="oferta" aria-pressed="false">Ofertas</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="busquedas-recientes" class="busquedas-recientes" hidden></div>
+                </div>
+
+                <div id="banner-categoria" class="alert alerta-categoria d-none align-items-center justify-content-between mb-3" role="status">
+                    <span>Categoría: <strong id="nombre-categoria"></strong></span>
+                    <button type="button" class="btn btn-oscuro btn-sm" id="quitar-categoria">Ver todas</button>
+                </div>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                    <p id="resultado-busqueda" class="text-secondary mb-0">Cargando títulos…</p>
+                </div>
+                <div class="row g-4" id="grilla-catalogo"></div>
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-oscuro d-none" id="btn-mostrar-mas">Mostrar más</button>
+                </div>
+                <div id="catalogo-vacio" class="vacio-accion d-none">
+                    <i class="bi bi-book" aria-hidden="true"></i>
+                    <p class="mb-0">No hay títulos para esa búsqueda.</p>
+                    <button type="button" class="btn btn-oscuro btn-sm" id="btn-vacio-limpiar">Quitar filtros</button>
+                </div>
+
+                <section class="recomendados-bloque mt-5 d-none" id="bloque-recomendados">
+                    <h3 class="seccion-titulo h4">Porque te gustaron tus favoritos</h3>
+                    <p class="bajada">Sugerencias según las categorías que marcaste.</p>
+                    <div class="recomendados-rail" id="rail-recomendados"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="bloque bloque-mis-libros" id="mis-libros">
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-end gap-2 mb-3">
+                    <div>
+                        <h2 class="seccion-titulo mb-1">Mis libros</h2>
+                        <p class="bajada mb-0">Títulos que ya compraste · <span id="mis-libros-contador">0</span> en tu biblioteca</p>
+                    </div>
+                    <a class="btn btn-linea btn-sm" href="/front/vistas/usuario/inicio.php">Ver en mi cuenta</a>
+                </div>
+                <div class="resumen-biblioteca d-none" id="resumen-biblioteca">
+                    <div>Invertido: <strong id="total-invertido">$ 0</strong></div>
+                    <div>Última compra: <strong id="ultima-compra">—</strong></div>
+                </div>
+                <div class="row g-3" id="grilla-mis-libros"></div>
+                <div id="mis-libros-vacio" class="vacio-accion">
+                    <i class="bi bi-bag-plus" aria-hidden="true"></i>
+                    <p class="mb-0">Todavía no compraste nada. Agregá títulos al carrito y confirmá la compra.</p>
+                    <a class="btn btn-oscuro btn-sm" href="#catalogo">Ir al catálogo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="franja-lectura">
+        <div class="container">
+            <p class="franja-kicker">Sala de lectura</p>
+            <p class="franja-frase">Elegí un título y seguí donde lo dejaste.</p>
+        </div>
+    </section>
+
+    <footer class="pie">
+        <div class="container py-4">
+            <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+                    <p class="pie-marca">EXTERNOLAB</p>
+                    <p class="mb-0">Libros, revistas y audiolibros para llevar o escuchar.</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="pie-marca">Visitas</p>
+                    <p class="mb-0">Lunes a sábado, de 9 a 20 h.</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="pie-marca">Datos</p>
+                    <p class="mb-1" id="estado-api">Catálogo EXTERNOLAB.</p>
+                    <a class="enlace-api" href="/api/estado">Estado de la API</a>
+                </div>
+            </div>
+            <p class="pie-credito mb-0 mt-3 pt-3">Developed by Fabricio Pintos</p>
+        </div>
+    </footer>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="panelAjustes" aria-labelledby="ajustesTitulo">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="ajustesTitulo">EXTERNOLAB</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p id="texto-sesion">Todavía no iniciaste sesión.</p>
+            <dl>
+                <dt>Horario</dt>
+                <dd>Lunes a sábado, de 9 a 20 h.</dd>
+                <dt>Sala de lectura</dt>
+                <dd>Planta baja, mesas junto a la ventana.</dd>
+                <dt>Atajos</dt>
+                <dd>Pulsá <kbd>/</kbd> para buscar · carrito y favoritos quedan guardados en este navegador.</dd>
+                <dt>Préstamos</dt>
+                <dd>Libros, revistas y audiolibros del catálogo.</dd>
+            </dl>
+            <button type="button" class="btn btn-outline-dark d-none" id="btn-salir">Cerrar sesión</button>
+        </div>
+    </div>
+
+    <div class="modal fade modal-biblioteca" id="modalLogin" tabindex="-1" aria-labelledby="loginTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-foto" role="img" aria-label="Pasillo de una biblioteca con lámparas"></div>
+                <form id="form-login" novalidate data-loader="off">
+                    <div class="modal-header border-0 pb-0">
+                        <h2 class="modal-title h5" id="loginTitulo">Ingresar a EXTERNOLAB</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Correo</label>
+                            <input type="email" class="form-control" id="correo" name="email" required autocomplete="username" placeholder="lector@biblioteca.test">
+                        </div>
+                        <div class="mb-3">
+                            <label for="clave" class="form-label">Contraseña</label>
+                            <div class="grupo-clave" data-clave>
+                                <div class="campo-clave">
+                                    <input type="password" class="form-control" id="clave" name="password" required autocomplete="current-password">
+                                    <button type="button" class="ojo-clave" aria-label="Mostrar contraseña" aria-pressed="false"></button>
+                                </div>
+                                <p class="aviso-mayus" hidden><span class="caps-marca" aria-hidden="true">A</span> Bloq Mayús activado</p>
+                            </div>
+                        </div>
+                        <p id="error-login" class="text-danger small mb-2" role="alert"></p>
+                        <div class="cuenta-demo mb-2">
+                            <button type="button" class="btn btn-linea btn-sm" data-demo="admin">Usar admin</button>
+                            <button type="button" class="btn btn-linea btn-sm" data-demo="lector">Usar lector</button>
+                        </div>
+                        <p class="small text-secondary mb-0">Administrador: admin@biblioteca.test · Biblioteca2026<br>Usuario: lector@biblioteca.test · Lectura2026</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-link" href="./login.php">Pantalla de ingreso</a>
+                        <button type="submit" class="btn btn-oscuro">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="detalleTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="detalleTitulo">Ficha</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex flex-column flex-sm-row gap-3 align-items-start">
+                        <div id="detalle-portada" class="cover cover-modal" aria-hidden="true"></div>
+                        <div class="flex-grow-1">
+                            <span id="detalle-tipo" class="badge rounded-pill badge-tipo"></span>
+                            <p id="detalle-categoria" class="text-secondary small mt-2 mb-1"></p>
+                            <p id="detalle-autor" class="mb-1 fw-bold"></p>
+                            <p id="detalle-anio" class="small text-secondary"></p>
+                            <p id="detalle-descripcion"></p>
+                            <p id="detalle-precio" class="precio mb-3"></p>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button type="button" class="btn btn-oscuro btn-sm" id="btn-carrito-detalle">Agregar al carrito</button>
+                                <button type="button" class="btn btn-linea btn-sm" id="btn-fav-detalle">Agregar a favoritos</button>
+                                <button type="button" class="btn btn-linea btn-sm" id="btn-copiar-titulo">Copiar título</button>
+                                <button type="button" class="btn btn-linea btn-sm" id="btn-compartir">Compartir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end panel-carrito" tabindex="-1" id="panelCarrito" aria-labelledby="carritoTitulo">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title h5" id="carritoTitulo">Carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="lista-carrito" class="lista-carrito flex-grow-1"></div>
+            <p id="carrito-vacio" class="texto-vacio">Tu carrito está vacío.</p>
+            <div class="carrito-pie mt-auto pt-3">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="fw-bold">Total</span>
+                    <strong id="total-carrito">$ 0</strong>
+                </div>
+                <button type="button" class="btn btn-oscuro w-100 mb-2" id="btn-comprar" disabled>Comprar ahora</button>
+                <button type="button" class="btn btn-linea w-100" id="btn-vaciar-carrito" disabled>Vaciar carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn-subir d-none" id="btn-subir" aria-label="Volver arriba">
+        <i class="bi bi-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <div class="modal fade" id="modalConfirmar" tabindex="-1" aria-labelledby="confirmarTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content modal-confirmar">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="confirmarTitulo">Confirmar compra</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-2">Vas a pasar <strong id="confirmar-cantidad">0</strong> título(s) a <em>Mis libros</em>.</p>
+                    <p class="mb-0">Total a confirmar:</p>
+                    <p class="total-confirmar mb-0" id="confirmar-total">$ 0</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-linea" data-bs-dismiss="modal">Seguir eligiendo</button>
+                    <button type="button" class="btn btn-oscuro" id="btn-confirmar-compra">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="aviso" class="toast align-items-center text-bg-dark border-0" role="status" aria-live="polite" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar aviso"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="../../assets/js/loader.js?v=16"></script>
+    <script src="../../assets/js/api.js"></script>
+    <script src="../../assets/js/auth.js"></script>
+    <script src="../../assets/js/clave.js"></script>
+    <script src="../../assets/js/tienda.js?v=12"></script>
+    <script src="../../assets/js/catalogo.js?v=12"></script>
+    <script src="../../assets/js/app.js?v=12"></script>
+</body>
+</html>

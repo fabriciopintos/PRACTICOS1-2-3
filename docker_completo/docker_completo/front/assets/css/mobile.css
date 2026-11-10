@@ -1,0 +1,228 @@
+/* Practicos3MD — responsive y usabilidad táctil */
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    padding-left: max(0.85rem, env(safe-area-inset-left));
+    padding-right: max(0.85rem, env(safe-area-inset-right));
+}
+
+.btn-subir {
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.toast-container {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+}
+
+@media (max-width: 991.98px) {
+    .biblioteca-nav .navbar-nav {
+        gap: 0.15rem;
+    }
+
+    .biblioteca-nav .nav-link {
+        padding: 0.7rem 0.35rem;
+        border-bottom: 1px solid var(--linea);
+    }
+
+    .biblioteca-nav .navbar-nav .nav-item:last-child .nav-link {
+        border-bottom: 0;
+    }
+
+    .barra-catalogo {
+        position: static;
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
+        padding: 0.85rem 0.25rem 0.35rem;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        border: 0;
+    }
+
+    .hero-acciones {
+        width: 100%;
+    }
+
+    .hero-acciones .btn {
+        flex: 1 1 auto;
+        min-height: 44px;
+    }
+
+    .filtros-scroll {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0.35rem;
+        padding-bottom: 0.35rem;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+
+    .filtros-scroll .filtro {
+        flex: 0 0 auto;
+    }
+
+    .portadas-autor .cover,
+    .portadas-aventura .cover {
+        width: 100%;
+    }
+
+    .panel-carrito {
+        --bs-offcanvas-width: 100vw;
+    }
+
+    .item-carrito {
+        grid-template-columns: 56px 1fr;
+    }
+
+    .estadisticas-catalogo {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-titulo {
+        font-size: clamp(1.85rem, 9vw, 2.6rem);
+    }
+
+    .hero-bajada {
+        font-size: 1rem;
+    }
+
+    .hero-imagen {
+        height: clamp(180px, 55vw, 280px);
+        border-radius: 0;
+    }
+
+    .seccion-titulo {
+        font-size: 1.45rem;
+    }
+
+    .catalogo-card .card-body {
+        padding: 0.85rem;
+    }
+
+    .catalogo-card .card-title {
+        font-size: 1rem;
+    }
+
+    .catalogo-card .mt-auto {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .catalogo-card .mt-auto .precio {
+        margin-bottom: 0.45rem !important;
+    }
+
+    .catalogo-card .mt-auto .d-flex.gap-2 {
+        width: 100%;
+    }
+
+    .catalogo-card .mt-auto .btn {
+        flex: 1;
+        min-height: 40px;
+    }
+
+    .btn-fav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-carrito-nav,
+    .btn-gear,
+    .navbar-toggler {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .modal-biblioteca .modal-dialog,
+    #modalDetalle .modal-dialog,
+    #modalConfirmar .modal-dialog {
+        margin: 0.6rem;
+    }
+
+    .franja-frase {
+        max-width: none;
+    }
+
+    .pie {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+
+    .vista-lista .col-producto {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .vista-lista .catalogo-card {
+        display: grid;
+        grid-template-columns: 96px 1fr;
+    }
+
+    .vista-lista .card-portada {
+        aspect-ratio: auto;
+        height: 100%;
+        min-height: 144px;
+    }
+
+    .vista-lista .card-body {
+        padding: 0.7rem 0.8rem;
+    }
+
+    .vista-lista .cinta-oferta,
+    .vista-lista .btn-fav {
+        transform: scale(0.9);
+        transform-origin: top right;
+    }
+
+    .vista-lista .btn-fav {
+        left: 0.35rem;
+        top: 0.35rem;
+        transform-origin: top left;
+    }
+
+    .recomendados-rail {
+        gap: 0.75rem;
+    }
+
+    .recomendado-chip {
+        min-width: 140px;
+    }
+}
+
+@media (max-width: 380px) {
+    .marca-nav {
+        font-size: 1.1rem;
+        max-width: 42vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .estadisticas-catalogo {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .biblioteca-nav .nav-link,
+    .btn,
+    .filtro,
+    .categoria-item {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button.cover:active,
+    .catalogo-card:active {
+        transform: scale(0.985);
+    }
+}

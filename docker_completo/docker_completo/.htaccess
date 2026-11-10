@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # API
+    RewriteCond %{REQUEST_URI} ^/api/
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^api/(.*)$ /api/index.php [L,QSA]
+
+    # Landing de Practicos3MD
+    RewriteRule ^$ /front/vistas/publicas/index.html [R=301,L]
+
+    # Compatibilidad con rutas anteriores del front
+    RewriteRule ^front/index\.html$ /front/vistas/publicas/index.html [R=301,L]
+    RewriteRule ^front/login\.php$ /front/vistas/publicas/login.php [R=301,L]
+    RewriteRule ^front/admin/dashboard\.php$ /front/vistas/admin/dashboard.php [R=301,L]
+    RewriteRule ^front/usuario/inicio\.php$ /front/vistas/usuario/inicio.php [R=301,L]
+</IfModule>

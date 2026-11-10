@@ -1,0 +1,65 @@
+.grupo-clave {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.campo-clave {
+    position: relative;
+}
+
+.campo-clave .form-control {
+    padding-right: 3rem;
+}
+
+.ojo-clave {
+    position: absolute;
+    top: 50%;
+    right: 0.35rem;
+    transform: translateY(-50%);
+    width: 2.35rem;
+    height: 2.35rem;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #6b6258;
+}
+
+.ojo-clave:hover,
+.ojo-clave:focus-visible {
+    background: rgba(28, 36, 48, 0.06);
+    color: #1c2430;
+}
+
+.ojo-clave svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.aviso-mayus {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0;
+    color: #8a5a12;
+    font-size: 0.82rem;
+    font-weight: 800;
+}
+
+.aviso-mayus[hidden] {
+    display: none;
+}
+
+.caps-marca {
+    display: inline-grid;
+    place-items: center;
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 1.5px solid currentColor;
+    border-radius: 0.28rem;
+    font-size: 0.68rem;
+    line-height: 1;
+}

@@ -1,0 +1,1266 @@
+/* Practicos3MD — estilos públicos */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loader visual vive en loader.css — solo helpers inline del catálogo */
+.loader-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 1.5rem 0;
+    color: var(--tinta-suave, #5d675f);
+}
+
+.btn-fav {
+    position: absolute;
+    top: 0.65rem;
+    left: 0.65rem;
+    z-index: 3;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(251, 247, 240, 0.92);
+    color: var(--granate, #7c2f2f);
+    display: grid;
+    place-items: center;
+    box-shadow: 0 4px 12px rgba(36, 48, 40, 0.12);
+}
+
+.btn-fav.activo,
+#btn-fav-detalle.activo {
+    color: #fff;
+    background: var(--granate, #7c2f2f);
+}
+
+.btn-subir {
+    position: fixed;
+    right: 1.1rem;
+    bottom: 1.1rem;
+    z-index: 1040;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--tinta, #243028);
+    color: #f6f0e6;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 8px 20px rgba(36, 48, 40, 0.25);
+}
+
+.btn-subir:hover {
+    background: var(--granate, #7c2f2f);
+    color: #fff;
+}
+
+.btn-linea {
+    border: 1px solid var(--tinta, #243028);
+    border-radius: 2px;
+    background: transparent;
+    color: var(--tinta, #243028);
+    font-weight: 700;
+}
+
+.btn-linea:hover {
+    background: rgba(36, 48, 40, 0.06);
+    color: var(--tinta, #243028);
+}
+
+#badge-favoritos,
+#badge-mis-libros {
+    font-size: 0.7rem;
+    vertical-align: middle;
+}
+
+/* —— Carrito —— */
+.btn-carrito-nav {
+    position: relative;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    background: transparent;
+    color: var(--tinta);
+    font-size: 1.25rem;
+    display: grid;
+    place-items: center;
+}
+
+.btn-carrito-nav:hover {
+    color: var(--granate);
+}
+
+.badge-carrito {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    min-width: 1.15rem;
+    height: 1.15rem;
+    padding: 0 0.28rem;
+    border-radius: 999px;
+    background: var(--granate);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    line-height: 1.15rem;
+    text-align: center;
+}
+
+.panel-carrito {
+    --bs-offcanvas-width: min(420px, 100vw);
+    background:
+        linear-gradient(180deg, rgba(255, 248, 238, 0.98), rgba(243, 228, 220, 0.92)),
+        var(--textura-linen);
+}
+
+.modal-content {
+    background:
+        linear-gradient(165deg, rgba(255, 252, 246, 0.98), rgba(245, 232, 214, 0.95)),
+        var(--textura-linen);
+    border: 1px solid rgba(184, 137, 85, 0.25);
+}
+
+.lista-carrito {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.item-carrito {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 0.8rem;
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--linea);
+}
+
+.item-carrito-tapa {
+    width: 64px;
+    height: 96px;
+    object-fit: cover;
+    background: #e7dfd2;
+}
+
+.item-carrito-info h3 {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+}
+
+.btn-qty {
+    min-width: 32px;
+    padding: 0.15rem 0.45rem;
+}
+
+.carrito-pie {
+    border-top: 1px solid var(--linea);
+}
+
+.texto-vacio {
+    margin: 0;
+    padding: 1.4rem 0;
+    color: var(--tinta-suave);
+    text-align: center;
+}
+
+.bloque-mis-libros {
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.libro-mio {
+    border-color: rgba(61, 92, 74, 0.25);
+}
+
+.catalogo-card.ya-comprado {
+    outline: 1px solid rgba(61, 92, 74, 0.35);
+}
+
+.btn-carrito.comprado {
+    opacity: 0.75;
+}
+
+.cuenta-cabecera,
+.bloque-mis-libros-cuenta {
+    background: rgba(251, 247, 240, 0.88);
+    border: 1px solid var(--linea);
+    padding: 1.4rem 1.3rem;
+}
+
+.cuenta-nombre {
+    margin: 0 0 0.35rem;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+body.lector-full {
+    display: block;
+    place-items: unset;
+    min-height: 100vh;
+    padding: 0;
+    background:
+        radial-gradient(ellipse at 15% 0%, rgba(138, 52, 52, 0.18), transparent 40%),
+        linear-gradient(180deg, rgba(239, 228, 210, 0.93), rgba(228, 236, 228, 0.88)),
+        url("../fotos/estanteria.jpg") center / cover no-repeat;
+    background-attachment: fixed;
+}
+
+body.lector-full .biblioteca-nav .nav-link.activo {
+    color: var(--granate);
+    box-shadow: inset 0 -2px 0 var(--granate);
+}
+
+.input-group .buscador {
+    border-right: 0;
+}
+
+.filtro.btn {
+    white-space: nowrap;
+}
+
+.nav-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--acento-lector, var(--granate));
+}
+
+body[data-tema-lector="sepia"] {
+    --papel: #f3e6d0;
+    --papel-card: #faf1e2;
+}
+
+body[data-tema-lector="bosque"] {
+    --papel: #e8efe6;
+    --papel-card: #f4f8f2;
+}
+
+body[data-tema-lector="noche"] {
+    --papel: #1d2420;
+    --papel-card: #27302b;
+    --tinta: #edeee8;
+    --tinta-suave: #b7c0b8;
+    color: var(--tinta);
+    background-image:
+        radial-gradient(ellipse at 10% 0%, rgba(111, 146, 124, 0.2), transparent 45%),
+        radial-gradient(ellipse at 90% 20%, rgba(138, 52, 52, 0.15), transparent 40%),
+        linear-gradient(180deg, #222b26, #1a211d);
+}
+
+body[data-tema-lector="noche"] .biblioteca-nav {
+    background: rgba(39, 48, 43, 0.96);
+}
+
+body[data-tema-lector="noche"] .catalogo-card,
+body[data-tema-lector="noche"] .buscador,
+body[data-tema-lector="noche"] .form-select,
+body[data-tema-lector="noche"] .barra-catalogo,
+body[data-tema-lector="noche"] .stat-pill {
+    background: var(--papel-card);
+    color: var(--tinta);
+}
+
+body[data-tema-lector="noche"] #categorias,
+body[data-tema-lector="noche"] #ofertas,
+body[data-tema-lector="noche"] #mis-libros {
+    background: rgba(39, 48, 43, 0.55);
+}
+
+:root {
+    --papel: #efe4d2;
+    --papel-suave: #f6ecdc;
+    --papel-card: #fff8ee;
+    --papel-musgo: #e4ece4;
+    --papel-vino: #f3e4dc;
+    --tinta: #1f2a24;
+    --tinta-suave: #556057;
+    --musgo: #355748;
+    --musgo-claro: #6f927c;
+    --granate: #8a3434;
+    --granate-profundo: #5c2222;
+    --oro: #b88955;
+    --oro-claro: #d7b484;
+    --azul-tinta: #3a4f5c;
+    --sombra: 0 12px 28px rgba(36, 48, 40, 0.1);
+    --linea: rgba(36, 48, 40, 0.16);
+    --textura-papel: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+    --textura-linen: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 30h60M30 0v60' stroke='%23243028' stroke-opacity='0.035' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--tinta);
+    font-family: "Source Sans 3", "Segoe UI", sans-serif;
+    background-color: var(--papel);
+    background-image:
+        radial-gradient(ellipse 90% 55% at 10% -10%, rgba(138, 52, 52, 0.12), transparent 55%),
+        radial-gradient(ellipse 70% 50% at 95% 15%, rgba(53, 87, 72, 0.14), transparent 50%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, rgba(184, 137, 85, 0.12), transparent 55%),
+        linear-gradient(180deg, #f7ecdc 0%, var(--papel) 28%, #eadfcd 100%),
+        var(--textura-linen);
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.42;
+    background-image: var(--textura-papel);
+    background-repeat: repeat;
+    background-size: 160px 160px;
+    mix-blend-mode: multiply;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 18px;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, rgba(184, 137, 85, 0.55), rgba(138, 52, 52, 0.35), transparent);
+    pointer-events: none;
+    z-index: 0;
+}
+
+main,
+header,
+footer,
+.franja-lectura {
+    position: relative;
+    z-index: 1;
+}
+
+.toast-container {
+    position: fixed !important;
+    z-index: 1090;
+}
+
+.btn-subir {
+    position: fixed;
+    z-index: 1040;
+}
+
+@media (max-width: 575.98px) {
+    body::after {
+        display: none;
+    }
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 2000;
+    padding: 0.5rem 0.8rem;
+    background: var(--tinta);
+    color: #fff;
+}
+
+.skip-link:focus {
+    top: 0.5rem;
+}
+
+/* —— Nav —— */
+.biblioteca-nav {
+    z-index: 1030;
+    background:
+        linear-gradient(180deg, rgba(255, 248, 238, 0.94), rgba(245, 234, 216, 0.92)),
+        var(--textura-linen);
+    border-bottom: 1px solid var(--linea);
+    box-shadow: 0 8px 20px rgba(36, 48, 40, 0.06);
+    backdrop-filter: blur(8px);
+}
+
+.marca-nav {
+    margin-right: 1rem;
+    color: var(--tinta);
+    font-family: "Fraunces", Georgia, serif;
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    font-style: italic;
+    font-weight: 560;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.marca-nav:hover {
+    color: var(--granate);
+}
+
+.biblioteca-nav .nav-link {
+    color: var(--tinta);
+    font-weight: 600;
+    text-decoration: none;
+    background: transparent;
+    border: 0;
+}
+
+.biblioteca-nav .btn.nav-link {
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+}
+
+.biblioteca-nav .nav-link:hover,
+.biblioteca-nav .nav-link:focus {
+    color: var(--granate);
+}
+
+.biblioteca-nav .navbar-toggler {
+    border-color: rgba(36, 48, 40, 0.3);
+}
+
+.btn-gear {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--tinta);
+    font-size: 1.25rem;
+    display: grid;
+    place-items: center;
+}
+
+.btn-gear:hover {
+    color: var(--granate);
+}
+
+/* —— Hero —— */
+.hero {
+    padding: 2rem 0 0;
+    background:
+        linear-gradient(120deg, rgba(138, 52, 52, 0.08), transparent 40%),
+        linear-gradient(180deg, rgba(255, 248, 238, 0.55), transparent 70%);
+}
+
+.hero-masthead {
+    max-width: 760px;
+    padding-bottom: 1.4rem;
+}
+
+.hero-fecha,
+.etiqueta {
+    margin-bottom: 0.35rem;
+    color: var(--granate);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero-titulo,
+.autor-nombre,
+.seccion-titulo {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-weight: 560;
+}
+
+.hero-titulo {
+    font-size: clamp(2rem, 7vw, 4.4rem);
+    line-height: 1.05;
+    margin-bottom: 0.6rem;
+}
+
+.hero-bajada,
+.bajada {
+    color: var(--tinta-suave);
+}
+
+.hero-bajada {
+    max-width: 28rem;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.hero-imagen {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: clamp(200px, 42vw, 480px);
+    object-fit: cover;
+    object-position: center 42%;
+    background: #d9cfc0;
+    box-shadow: inset 0 0 0 1px rgba(36, 48, 40, 0.12);
+    filter: saturate(1.05) contrast(1.02);
+}
+
+/* —— Secciones —— */
+.bloque {
+    padding: 2.2rem 0 0.4rem;
+}
+
+#categorias {
+    background:
+        linear-gradient(180deg, rgba(228, 236, 228, 0.72), rgba(228, 236, 228, 0.35)),
+        var(--textura-linen);
+    border-block: 1px solid rgba(53, 87, 72, 0.12);
+    margin-top: 0.4rem;
+    padding-top: 2.4rem;
+    padding-bottom: 1.6rem;
+}
+
+#aventuras {
+    background:
+        radial-gradient(circle at 85% 20%, rgba(184, 137, 85, 0.16), transparent 40%),
+        linear-gradient(180deg, transparent, rgba(255, 248, 238, 0.5));
+}
+
+#ofertas {
+    background:
+        linear-gradient(180deg, rgba(243, 228, 220, 0.85), rgba(243, 228, 220, 0.4)),
+        var(--textura-linen);
+    border-block: 1px solid rgba(138, 52, 52, 0.12);
+    padding-top: 2.4rem;
+    padding-bottom: 1.8rem;
+}
+
+#catalogo {
+    background:
+        radial-gradient(ellipse at top left, rgba(58, 79, 92, 0.08), transparent 45%),
+        linear-gradient(180deg, rgba(246, 236, 220, 0.65), transparent);
+}
+
+#mis-libros,
+.bloque-mis-libros {
+    background:
+        linear-gradient(180deg, rgba(228, 236, 228, 0.55), rgba(255, 248, 238, 0.7)),
+        var(--textura-linen);
+    border-top: 1px solid rgba(53, 87, 72, 0.14);
+    padding-top: 2.2rem;
+    padding-bottom: 2.4rem;
+}
+
+.autor-nombre {
+    font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+}
+
+.seccion-titulo {
+    text-align: left;
+    font-size: clamp(1.45rem, 3.2vw, 2.3rem);
+    margin-bottom: 1rem;
+}
+
+.bajada {
+    margin-top: -0.4rem;
+    margin-bottom: 1.2rem;
+}
+
+.categoria-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.categoria-item:hover {
+    color: var(--granate);
+}
+
+.categoria-icono {
+    width: clamp(64px, 18vw, 92px);
+    height: clamp(64px, 18vw, 92px);
+    display: grid;
+    place-items: center;
+    transition: transform 0.2s ease;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.55), transparent 55%),
+        linear-gradient(145deg, #fff8ee, #e8dcc8);
+    box-shadow:
+        0 8px 18px rgba(36, 48, 40, 0.1),
+        inset 0 0 0 1px rgba(184, 137, 85, 0.25);
+}
+
+.categoria-item[data-ir-categoria="drama"] .categoria-icono {
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.5), transparent 55%), linear-gradient(145deg, #eef5e8, #cfe0c8);
+}
+.categoria-item[data-ir-categoria="terror"] .categoria-icono {
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.35), transparent 55%), linear-gradient(145deg, #2a2a2a, #121212);
+}
+.categoria-item[data-ir-categoria="amor"] .categoria-icono {
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.55), transparent 55%), linear-gradient(145deg, #ffe6ef, #f5b8cb);
+}
+.categoria-item[data-ir-categoria="aventura"] .categoria-icono {
+    background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.5), transparent 55%), linear-gradient(145deg, #e7f4ea, #9fd0a4);
+}
+
+.categoria-icono svg {
+    width: 82%;
+    height: 82%;
+}
+
+.categoria-item.activa .categoria-icono,
+.categoria-item:hover .categoria-icono {
+    transform: translateY(-3px);
+}
+
+/* —— Portadas / cards —— */
+.cover {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0.35rem;
+    background: #d9cfc0;
+    box-shadow: var(--sombra);
+}
+
+button.cover {
+    cursor: pointer;
+    appearance: none;
+}
+
+.card-portada {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #e7dfd2;
+    position: relative;
+}
+
+button.card-portada {
+    cursor: pointer;
+    appearance: none;
+    border: 0;
+    padding: 0;
+    display: block;
+}
+
+.cover img,
+.card-portada img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.cover__titulo,
+.cover__autor {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.catalogo-card {
+    position: relative;
+    background:
+        linear-gradient(165deg, rgba(255, 252, 246, 0.98), rgba(247, 236, 220, 0.92)),
+        var(--textura-linen);
+    border: 1px solid rgba(36, 48, 40, 0.14);
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(36, 48, 40, 0.06);
+}
+
+.catalogo-card .card-title {
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 1.08rem;
+    line-height: 1.25;
+    margin: 0.65rem 0 0.35rem;
+}
+
+.card-autor {
+    color: #6d645c;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
+}
+
+.catalogo-card .card-text {
+    color: #4e4944;
+    font-size: 0.92rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.badge-tipo {
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+}
+
+.badge-libro { background: linear-gradient(135deg, #dce8de, #c5d9c8); color: #243028; }
+.badge-revista { background: linear-gradient(135deg, #f4dfc8, #e8c9a4); color: #6a3b1f; }
+.badge-audiolibro { background: linear-gradient(135deg, #f0d4d4, #e2b4b4); color: #7c2f2f; }
+
+.cinta-oferta {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    padding: 0.2rem 0.45rem;
+    border-radius: 0.35rem;
+    background: linear-gradient(135deg, #c43a3a, #8a3434);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(138, 52, 52, 0.35);
+}
+
+.precio { font-weight: 800; }
+
+.precio-viejo {
+    margin-right: 0.3rem;
+    color: #8a8178;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+.filtro.btn {
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: var(--tinta-suave);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.filtro.btn.activo,
+.filtro.btn[aria-pressed="true"] {
+    color: var(--tinta);
+    border-bottom-color: var(--granate);
+}
+
+.buscador {
+    border-radius: 2px;
+    border-color: rgba(36, 48, 40, 0.22);
+    background: var(--papel-card);
+}
+
+.alerta-categoria {
+    background: rgba(124, 47, 47, 0.08);
+    border: 1px solid rgba(124, 47, 47, 0.2);
+    color: var(--tinta);
+}
+
+.btn-oscuro {
+    border: 0;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #9a4040, var(--granate) 55%, var(--granate-profundo));
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 6px 14px rgba(138, 52, 52, 0.28);
+}
+
+.btn-oscuro:hover,
+.btn-oscuro:focus {
+    background: linear-gradient(180deg, #8a3434, #5c2222);
+    color: #fff;
+}
+
+.cover-modal {
+    width: min(160px, 40vw);
+    flex-shrink: 0;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #d9cfc0;
+}
+
+.cover-modal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* —— Franja / footer —— */
+.franja-lectura {
+    margin-top: 2.8rem;
+    padding: 2.8rem 0;
+    color: #f6f0e6;
+    background:
+        linear-gradient(105deg, rgba(31, 42, 36, 0.88), rgba(138, 52, 52, 0.45), rgba(31, 42, 36, 0.55)),
+        url("../fotos/estanteria.jpg") center / cover no-repeat;
+}
+
+.franja-kicker {
+    margin-bottom: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #e7c7a2;
+}
+
+.franja-frase {
+    max-width: 14em;
+    margin: 0;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-weight: 560;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    line-height: 1.15;
+}
+
+.pie {
+    background:
+        linear-gradient(180deg, #2a3830 0%, #1a2420 100%),
+        var(--textura-linen);
+    color: #d9d3c8;
+    border-top: 3px solid var(--oro);
+    margin-bottom: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.pie-marca {
+    margin-bottom: 0.35rem;
+    color: #f6f0e6;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.pie-credito {
+    border-top: 1px solid rgba(246, 240, 230, 0.18);
+    color: #e7c7a2;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-align: center;
+}
+
+.enlace-api {
+    color: #e7c7a2;
+}
+
+.modal-biblioteca .modal-content {
+    overflow: hidden;
+    border: 0;
+    border-radius: 1.1rem;
+}
+
+.modal-foto {
+    height: 140px;
+    background:
+        linear-gradient(180deg, rgba(18, 12, 8, 0.05), rgba(18, 12, 8, 0.4)),
+        url("../fotos/lectura.jpg") left center / cover no-repeat;
+}
+
+@media (hover: hover) {
+    button.cover,
+    .catalogo-card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button.cover:hover,
+    .catalogo-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--sombra);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    button.cover,
+    .catalogo-card,
+    .categoria-icono { transition: none; }
+}
+
+@media (max-width: 991.98px) {
+    .biblioteca-nav .navbar-collapse {
+        padding: 0.6rem 0 0.9rem;
+    }
+
+    .bloque {
+        padding-top: 1.6rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero {
+        padding-top: 1.4rem;
+    }
+
+    .catalogo-card .card-text {
+        -webkit-line-clamp: 2;
+    }
+
+    .pie .col-md-4 + .col-md-4 {
+        margin-top: 0.4rem;
+    }
+}
+
+/* —— v12: interfaz, UX y motion —— */
+:focus-visible {
+    outline: 2px solid var(--granate);
+    outline-offset: 3px;
+}
+
+.progreso-scroll {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0;
+    z-index: 2000;
+    background: linear-gradient(90deg, var(--granate), var(--oro));
+    pointer-events: none;
+    transition: width 0.08s linear;
+}
+
+.hero-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-top: 1.15rem;
+}
+
+.hero-acciones .btn {
+    min-height: 44px;
+    padding-inline: 1.1rem;
+}
+
+.barra-catalogo {
+    position: sticky;
+    top: 64px;
+    z-index: 20;
+    padding: 0.85rem 1rem 0.35rem;
+    margin-bottom: 0.85rem;
+    background:
+        linear-gradient(180deg, rgba(255, 248, 238, 0.96), rgba(242, 229, 208, 0.92)),
+        var(--textura-linen);
+    border: 1px solid rgba(184, 137, 85, 0.28);
+    border-radius: 4px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 24px rgba(36, 48, 40, 0.08);
+}
+
+.herramientas-catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-vista {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--linea);
+    border-radius: 2px;
+    background: var(--papel-card);
+    color: var(--tinta-suave);
+    display: grid;
+    place-items: center;
+}
+
+.btn-vista.activo,
+.btn-vista[aria-pressed="true"] {
+    color: #fff;
+    background: var(--tinta);
+    border-color: var(--tinta);
+}
+
+.atajo-busqueda {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.15rem 0.45rem;
+    border: 1px solid var(--linea);
+    border-radius: 4px;
+    color: var(--tinta-suave);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.estadisticas-catalogo {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: 0 0 1rem;
+}
+
+.stat-pill {
+    padding: 0.7rem 0.8rem;
+    background:
+        linear-gradient(145deg, rgba(255, 252, 246, 0.95), rgba(232, 240, 232, 0.85));
+    border: 1px solid rgba(53, 87, 72, 0.16);
+    border-left: 3px solid var(--musgo);
+    border-radius: 2px;
+}
+
+.stat-pill:nth-child(2) { border-left-color: var(--granate); background: linear-gradient(145deg, #fff8ee, #f3e4dc); }
+.stat-pill:nth-child(3) { border-left-color: #c45c6a; background: linear-gradient(145deg, #fff8ee, #f6e6ea); }
+.stat-pill:nth-child(4) { border-left-color: var(--oro); background: linear-gradient(145deg, #fff8ee, #f4e8d4); }
+
+.stat-pill strong {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.1;
+}
+
+.stat-pill span {
+    color: var(--tinta-suave);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.cinta-descuento {
+    position: absolute;
+    left: 0.65rem;
+    bottom: 0.65rem;
+    z-index: 2;
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.25rem;
+    background: rgba(36, 48, 40, 0.88);
+    color: #f6f0e6;
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.badge-carrito.vacio,
+#badge-favoritos.vacio,
+#badge-mis-libros.vacio {
+    opacity: 0;
+    transform: scale(0.6);
+}
+
+.badge-carrito,
+#badge-favoritos,
+#badge-mis-libros {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.badge-carrito.rebote {
+    animation: rebote-badge 0.45s ease;
+}
+
+@keyframes rebote-badge {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.35); }
+    100% { transform: scale(1); }
+}
+
+.busquedas-recientes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.35rem 0 0.85rem;
+}
+
+.chip-busqueda {
+    border: 1px solid var(--linea);
+    border-radius: 999px;
+    background: var(--papel-card);
+    color: var(--tinta-suave);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.2rem 0.7rem;
+}
+
+.chip-busqueda:hover {
+    color: var(--granate);
+    border-color: rgba(124, 47, 47, 0.35);
+}
+
+.recomendados-bloque {
+    margin-top: 0.4rem;
+}
+
+.recomendados-rail {
+    display: flex;
+    gap: 0.9rem;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.recomendado-chip {
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    text-align: left;
+    color: inherit;
+}
+
+.recomendado-chip img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 0.35rem;
+    box-shadow: var(--sombra);
+    margin-bottom: 0.4rem;
+    background: #e7dfd2;
+}
+
+.recomendado-chip strong {
+    display: block;
+    font-family: "Fraunces", Georgia, serif;
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+.recomendado-chip span {
+    color: var(--tinta-suave);
+    font-size: 0.8rem;
+}
+
+.vacio-accion {
+    display: grid;
+    justify-items: center;
+    gap: 0.65rem;
+    padding: 2rem 1rem;
+    color: var(--tinta-suave);
+    text-align: center;
+}
+
+.vacio-accion i {
+    font-size: 1.8rem;
+    color: var(--granate);
+}
+
+.resumen-biblioteca {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    padding: 0.85rem 1rem;
+    background: rgba(61, 92, 74, 0.08);
+    border: 1px solid rgba(61, 92, 74, 0.18);
+}
+
+.resumen-biblioteca strong {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+}
+
+.nav-link.seccion-activa {
+    color: var(--granate) !important;
+    box-shadow: inset 0 -2px 0 var(--granate);
+}
+
+.skeleton-card {
+    min-height: 320px;
+    background:
+        linear-gradient(90deg, rgba(231, 223, 210, 0.35), rgba(251, 247, 240, 0.9), rgba(231, 223, 210, 0.35)),
+        var(--papel-card);
+    background-size: 200% 100%;
+    border: 1px solid var(--linea);
+    animation: shimmer 1.2s ease infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+.vista-lista #grilla-catalogo > [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.vista-lista .catalogo-card {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: stretch;
+}
+
+.vista-lista .card-portada {
+    height: 100%;
+    min-height: 210px;
+    aspect-ratio: auto;
+}
+
+.vista-lista .card-text {
+    -webkit-line-clamp: 4;
+}
+
+.cuenta-demo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-top: 0.75rem;
+}
+
+.cuenta-demo .btn {
+    font-size: 0.82rem;
+}
+
+.filtro-precio {
+    display: grid;
+    gap: 0.25rem;
+}
+
+.rango-precio-val {
+    font-size: 0.82rem;
+    color: var(--tinta-suave);
+    font-weight: 700;
+}
+
+.modal-confirmar .modal-body {
+    font-size: 1.02rem;
+}
+
+.total-confirmar {
+    font-family: "Fraunces", Georgia, serif;
+    font-style: italic;
+    font-size: 1.6rem;
+}
+
+body[data-tema-lector="noche"] .barra-catalogo,
+body[data-tema-lector="noche"] .stat-pill,
+body[data-tema-lector="noche"] .chip-busqueda,
+body[data-tema-lector="noche"] .btn-vista {
+    background: var(--papel-card);
+    color: var(--tinta);
+}
+
+body[data-tema-lector="noche"] .resumen-biblioteca {
+    background: rgba(237, 238, 232, 0.06);
+    border-color: rgba(237, 238, 232, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .badge-carrito.rebote,
+    .skeleton-card {
+        animation: none;
+    }
+}
